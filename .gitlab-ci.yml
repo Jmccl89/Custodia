@@ -12,6 +12,7 @@ variables:
   DB_HOST: postgres
   DB_USER: postgres
   DB_PASSWORD: ""
+  CODECLIMATE_REPO_TOKEN: "6a0ebd93163ba27e304598507d4708c3ef92453ba5005bf9b8dafb1fe6d6a80e"
 lint:
   stage: test
   tags:
@@ -34,3 +35,4 @@ test:
     - bundle exec rake db:migrate
     - bundle exec rake assets:precompile
     - bundle exec rake test
+    - bundle exec codeclimate-test-reporter
