@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 class Entry < ApplicationRecord
   belongs_to :equipment
-  DATE_REGEX = /\d{4}-\d{2}-\d{2}/
+  DATE_REGEX = /\A\d{4}-\d{2}-\d{2}\z/
   validates :date, presence: true, format: { with: DATE_REGEX }
   validates :content, presence: true, length: { maximum: 255 }
   validates :mileage, presence: true,
