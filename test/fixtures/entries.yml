@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2017-03-07
+  content: MyText
+  mileage: 1
+  employee: MyString
+
+two:
+  date: 2017-03-07
+  content: MyText
+  mileage: 1
+  employee: MyString

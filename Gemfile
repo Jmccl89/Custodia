@@ -29,12 +29,12 @@ group :development do
 end
 
 group :test do
+  gem 'codeclimate-test-reporter', '~> 1.0.0'
   gem 'guard'
   gem 'guard-minitest'
   gem 'minitest-reporters'
   gem 'rails-controller-testing'
   gem 'simplecov'
-  gem 'codeclimate-test-reporter', '~> 1.0.0'
 end
 
 group :production do
