@@ -15,4 +15,9 @@ class ActiveSupport::TestCase
   def setup
     @base_title = 'Custodia'
   end
+
+  # Returns true if test user is logged in
+  def logged_in?
+    !session[:user_id].nil?
+  end
 end
