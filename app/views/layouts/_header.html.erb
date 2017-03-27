@@ -1,20 +1,27 @@
-<nav class="navbar navbar-toggleable-sm navbar-inverse bg-inverse">
-  <%= link_to "Custodia", root_path, class: "navbar-brand" %>
-  <ul class="navbar-nav ml-auto">
-    <li class="nav-item"><%= link_to "Home",   root_path, class: "nav-link" %></li>
-    <% if logged_in? %>
-      <li class="nav-item"><%= link_to "Users", '#', class: "nav-link" %></li>
-      <li class="nav-item dropdown">
-        <a href="#" class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown"
-           aria-haspopup="true" aria-expanded="false">Account</a>
-        <ul class="dropdown-menu">
-          <li><%= link_to "Profile", current_user, class: "dropdown-item" %></li>
-          <li><%= link_to "Settings", '#', class: "dropdown-item" %></li>
-          <li>              <%= link_to "Log out", logout_path, method: "delete", class: "dropdown-item" %></li>
-        </ul>
-      </li>
-    <% else %>
-      <li><%= link_to "Log in", login_path, class: "nav-link" %></li>
-    <% end %>
-  </ul>
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="container">
+    <%= link_to "Custodia", root_path, class: "navbar-brand text-uppercase" %>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><%= link_to "Home",   root_path, class: "nav-link" %></li>
+        <% if logged_in? %>
+          <li class="nav-item"><%= link_to "Users", '#', class: "nav-link" %></li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">Account</a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Profile", current_user, class: "dropdown-item" %></li>
+              <li><%= link_to "Settings", '#', class: "dropdown-item" %></li>
+              <li>              <%= link_to "Log out", logout_path, method: "delete", class: "dropdown-item" %></li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to "Log in", login_path, class: "nav-link" %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </nav>
