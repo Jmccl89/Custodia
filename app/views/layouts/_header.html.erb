@@ -15,7 +15,7 @@
             <ul class="dropdown-menu">
               <li><%= link_to "Profile", current_user, class: "dropdown-item" %></li>
               <li><%= link_to "Settings", '#', class: "dropdown-item" %></li>
-              <li>              <%= link_to "Log out", logout_path, method: "delete", class: "dropdown-item" %></li>
+              <li><%= link_to "Log out", logout_path, method: "delete", class: "dropdown-item" %></li>
             </ul>
           </li>
         <% else %>
