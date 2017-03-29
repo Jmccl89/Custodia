@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module SessionsHelper
   # Log in given user
   def log_in user

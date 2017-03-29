@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class Entry < ApplicationRecord
   belongs_to :equipment
   DATE_REGEX = /\A\d{4}-\d{2}-\d{2}\z/
