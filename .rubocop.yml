@@ -40,3 +40,8 @@ Style/ClassAndModuleChildren:
     Enabled: false
 Documentation:
     Enabled: false
+Rails/FilePath:
+    Enabled: false
+# Disable until rubocop implements fix in >0.48.0
+Rails/Blank:
+    Enabled: false
