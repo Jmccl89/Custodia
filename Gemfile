@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 ruby '2.4.1'
 
 gem 'bcrypt'
-gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'bootstrap', '4.0.0.alpha6'
 gem 'coffee-rails'
 gem 'jbuilder'
 gem 'jquery-rails'
