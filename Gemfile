@@ -35,7 +35,7 @@ group :test do
   gem 'guard-minitest'
   gem 'minitest-reporters'
   gem 'rails-controller-testing'
-  gem 'simplecov'
+  gem 'simplecov', '~> 0.15.0'
 end
 
 group :production do
