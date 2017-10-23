@@ -10,7 +10,7 @@ gem 'coffee-rails'
 gem 'jbuilder'
 gem 'jquery-rails'
 gem 'puma'
-gem 'rails', '5.0.2'
+gem 'rails'
 gem 'sass-rails'
 gem 'therubyracer', platforms: :ruby
 gem 'turbolinks'
