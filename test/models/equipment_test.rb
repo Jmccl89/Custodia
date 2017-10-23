@@ -4,9 +4,7 @@ require 'test_helper'
 
 class EquipmentTest < ActiveSupport::TestCase
   def setup
-    @company = Company.new(name: "Bob's Trucking")
-    @company.save
-    @equipment = Equipment.new(company_id: @company.id, name: 'Unit 59', description: 'Chevrolet Silverado 2008',
+    @equipment = Equipment.new(name: 'Unit 59', description: 'Chevrolet Silverado 2008',
                                serial: '1GCEK19098Z148759', purchase_date: '2012-10-25')
   end
 
