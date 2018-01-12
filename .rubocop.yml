@@ -2,6 +2,8 @@ AllCops:
   TargetRubyVersion: 2.4
 Metrics/LineLength:
   Max: 120
+Metrics/AbcSize:
+  Max: 25
 # Disable this cop so we can get better code coverage.
 Style/IfUnlessModifier:
   Enabled: false
