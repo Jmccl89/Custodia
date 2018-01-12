@@ -3,7 +3,7 @@ AllCops:
 Metrics/LineLength:
   Max: 120
 Metrics/AbcSize:
-  Max: 16
+  Max: 25
 # Disable this cop so we can get better code coverage.
 Style/IfUnlessModifier:
   Enabled: false
