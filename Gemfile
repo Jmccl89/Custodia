@@ -15,6 +15,8 @@ gem 'sass-rails'
 gem 'therubyracer', platforms: :ruby
 gem 'turbolinks'
 gem 'uglifier'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap4'
 
 group :development, :test do
   gem 'byebug'
@@ -23,6 +25,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'faker'
   gem 'listen'
   gem 'spring'
   gem 'spring-watcher-listen'
