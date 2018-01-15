@@ -44,3 +44,5 @@ Documentation:
     Enabled: false
 Style/MixinUsage:
     Enabled: false
+Style/GuardClause:
+    Enabled: false

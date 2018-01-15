@@ -15,6 +15,8 @@ class ActiveSupport::TestCase
   # Add more helper methods to be used by all tests here...
   def setup
     @base_title = 'Custodia'
+    @user = users(:john)
+    @other_user = users(:jane)
   end
 
   # Returns true if test user is logged in
