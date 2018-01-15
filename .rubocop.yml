@@ -42,3 +42,5 @@ Style/ClassAndModuleChildren:
     Enabled: false
 Documentation:
     Enabled: false
+Style/MixinUsage:
+    Enabled: false
