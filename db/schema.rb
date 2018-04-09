@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180115182950) do
+ActiveRecord::Schema.define(version: 2018_01_15_182950) do
 
   create_table "entries", force: :cascade do |t|
     t.date "date"
