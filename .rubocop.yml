@@ -2,15 +2,13 @@ AllCops:
   TargetRubyVersion: 2.4
   Exclude:
     - db/migrate/20171023084638_drop_companies.rb
-    - config/environments/production.rb
 Metrics/LineLength:
   Max: 120
 Metrics/AbcSize:
   Max: 25
 Metrics/MethodLength:
   Max: 16
-Metrics/BlockLength:
-  Max: 25
+
 # Disable this cop so we can get better code coverage.
 Style/IfUnlessModifier:
   Enabled: false
@@ -45,8 +43,11 @@ Style/WordArray:
   Exclude:
     - 'db/schema.rb'
 Metrics/BlockLength:
+  Max: 40
   Exclude:
     - 'db/schema.rb'
+Naming/AccessorMethodName:
+  Enabled: false
 Style/ClassAndModuleChildren:
     Enabled: false
 Documentation:
