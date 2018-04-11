@@ -1,12 +1,15 @@
 # frozen_string_literal: true
 
-class EquipmentsController < ApplicationController
+class EquipmentController < ApplicationController
   before_action :logged_in_user, only: %i[create destroy]
   before_action :admin_user, only: :destroy
 
   def index
     @equipments = Equipment.paginate(page: params[:page])
-    @new_equipment = Equipment.create
+  end
+
+  def new
+    @equipment = Equipment.new
   end
 
   def show
@@ -27,9 +30,9 @@ class EquipmentsController < ApplicationController
 
   def destroy; end
 
-  private
+private
 
-    def equipment_params
-      params.require(:equipment).permit(:name, :description, :purchase_date, :serial)
-    end
+  def equipment_params
+    params.require(:equipment).permit(:name, :description, :purchase_date, :serial)
+  end
 end
