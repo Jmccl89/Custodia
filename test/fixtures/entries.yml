@@ -1,13 +1,38 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  date: 2017-03-07
-  content: MyText
-  mileage: 1
-  employee: MyString
+orange:
+  date: '2013-03-30'
+  content: 'Oil changed.'
+  mileage: 197_000
+  employee: 'Mike'
+  equipment: ford
 
-two:
-  date: 2017-03-07
-  content: MyText
-  mileage: 1
-  employee: MyString
+blue:
+  date: '2014-03-30'
+  content: 'Back brakes replaced, oil changed.'
+  mileage: 197_200
+  employee: 'Gregg'
+  equipment: ford
+
+red:
+  date: '2016-03-30'
+  content: '2016 entry text'
+  mileage: 197_700
+  employee: 'James'
+  equipment: dodge
+
+green:
+  date: '2015-03-30'
+  content: 'Back shocks replaced, oil changed.'
+  mileage: 197_300
+  employee: 'Chris'
+  equipment: chevy
+
+<% 30.times do |n| %>
+entry_<%= n %>:
+  date: <%= Date.jd(2_456_000 + Random.rand(1000)).to_s %>
+  content: <%= Faker::Lorem.sentence(5) %>
+  mileage: 197_000
+  employee: 'Mike'
+  equipment: ford
+<% end %>

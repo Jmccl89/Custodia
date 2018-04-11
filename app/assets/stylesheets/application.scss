@@ -85,3 +85,62 @@ body {
   width: auto;
   margin-left: 0;
 }
+
+/* entries */
+.equipment_info {
+margin-left: 60px;
+}
+
+.entry_count{
+  margin-left: 60px;
+}
+
+.entries {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .employee {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+  }
+  .mileage {
+    /* color: $gray-light; */
+    display: block;
+    margin-left: 60px;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+  }
+}
+
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+span.picture {
+  margin-top: 10px;
+  input {
+    border: 0;
+  }
+}
+
+.form-control {
+  padding-bottom: 3px
+}

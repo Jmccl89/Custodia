@@ -6,6 +6,7 @@ require 'rails/test_help'
 require 'simplecov'
 SimpleCov.start
 require 'minitest/reporters'
+require 'faker'
 Minitest::Reporters.use!
 
 class ActiveSupport::TestCase
@@ -17,6 +18,7 @@ class ActiveSupport::TestCase
     @base_title = 'Custodia'
     @user = users(:john)
     @other_user = users(:jane)
+    @entry = entries(:orange)
   end
 
   # Returns true if test user is logged in

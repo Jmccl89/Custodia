@@ -16,6 +16,14 @@ User.create!(name:  'Example User',
              activated: true,
              activated_at: Time.zone.now)
 
+User.create!(name:  'James McCloskey',
+             email: 'james@mccloskey.io',
+             password:              'password',
+             password_confirmation: 'password',
+             admin: true,
+             activated: true,
+             activated_at: Time.zone.now)
+
 99.times do |n|
   name  = Faker::Name.name
   email = "example-#{n + 1}@railstutorial.org"
@@ -26,4 +34,35 @@ User.create!(name:  'Example User',
                password_confirmation: password,
                activated: true,
                activated_at: Time.zone.now)
+end
+
+Equipment.create!(name: 'Unit 59',
+                  description: 'Ferrari La Ferrari',
+                  serial: '1234ABCD',
+                  purchase_date: '2012-10-25')
+
+Equipment.create!(name: 'Unit 60',
+                  description: 'Chevrolet Silverado 2008',
+                  serial: '123456678',
+                  purchase_date: '2012-10-25')
+
+Equipment.create!(name: 'Unit 61',
+                  description: 'Dodge Durango 2007',
+                  serial: '123CBA',
+                  purchase_date: '2012-10-25')
+
+Equipment.create!(name: 'Unit 11',
+                  description: 'Ford F-150 2000',
+                  serial: 'BBBBAAAA',
+                  purchase_date: '2012-10-25')
+
+equipments = Equipment.take(4)
+50.times do
+  content = Faker::Lorem.sentence(3)
+  equipments.each do |equipment|
+    equipment.entries.create!(date: Date.jd(Random.rand(2_456_000..2_456_999)),
+                              content: content,
+                              mileage: 197_000,
+                              employee: 'Thomas')
+  end
 end

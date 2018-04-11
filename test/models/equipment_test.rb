@@ -55,5 +55,16 @@ class EquipmentTest < ActiveSupport::TestCase
   end
 
   test 'purchase_date should be valid' do
+    @equipment.purchase_date = '2022-333-2'
+    assert_not @equipment.valid?
+  end
+
+  test 'associated entries should be destroyed' do
+    @equipment.save
+    @equipment.entries.create!(date: '2013-03-30', content: 'Back shocks replaced, oil changed.',
+                               mileage: 197_000, employee: 'Thomas')
+    assert_difference 'Entry.count', -1 do
+      @equipment.destroy
+    end
   end
 end

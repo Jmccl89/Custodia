@@ -1,0 +1,18 @@
+<%= form_for(@entry) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.label :date %>
+    <%= f.date_field :date, :value => Time.now.strftime('%Y-%m-%d'), class: 'form-control' %>
+    <p></p>
+    <%= f.text_area :content, placeholder: "Enter notes or work completed...", class: 'form-control' %>
+    <p></p>
+    <%= f.label :mileage, 'Mileage / Hours' %>
+    <%= f.text_field :mileage, placeholder: "###", class: 'form-control' %>
+    <p></p>
+    <%= f.label :employee %>
+    <%= f.text_field :employee, value: current_user.name, class: 'form-control' %>
+    <%= hidden_field_tag :equipment, @equipment.id %>
+  </div>
+  <p></p>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>

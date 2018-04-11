@@ -7,12 +7,17 @@ class EntryTest < ActiveSupport::TestCase
     @equipment = Equipment.new(name: 'Unit 59', description: 'Chevrolet Silverado 2008',
                                serial: '1GCEK19098Z148759', purchase_date: '2012-10-25')
     @equipment.save
-    @entry = Entry.new(equipment_id: @equipment.id, date: '2013-03-30', content: 'Back shocks replaced, oil changed.',
-                       mileage: 197_000, employee: 'Thomas')
+    @entry = @equipment.entries.build(date: '2013-03-30', content: 'Back shocks replaced, oil changed.',
+                                      mileage: 197_000, employee: 'Thomas')
   end
 
   test 'should be valid' do
     assert @entry.valid?
+  end
+
+  test 'equipment id should be present' do
+    @entry.equipment_id = nil
+    assert_not @entry.valid?
   end
 
   test 'date should be present' do
@@ -50,6 +55,10 @@ class EntryTest < ActiveSupport::TestCase
   test 'employee should be present' do
     @entry.employee = '   '
     assert_not @entry.valid?
+  end
+
+  test 'order should be newest first' do
+    assert_equal entries(:red), Entry.first
   end
 
   test 'employee should exist' do
