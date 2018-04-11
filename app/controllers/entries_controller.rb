@@ -2,6 +2,7 @@
 
 class EntriesController < ApplicationController
   before_action :logged_in_user, only: %i[create destroy]
+  before_action :admin_user, only: :destroy
 
   def create
     @equipment = params[:equipment]
@@ -14,7 +15,11 @@ class EntriesController < ApplicationController
     end
   end
 
-  def destroy; end
+  def destroy
+    @entry.destroy
+    flash[:success] = 'Entry removed'
+    redirect_back fallback_location: root_url
+  end
 
 private
 

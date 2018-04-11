@@ -1,0 +1,18 @@
+<%= form_for(@new_equipment) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.label :purchase_date %>
+    <%= f.date_field :purchase_date, :value => Time.now.strftime('%Y-%m-%d'), class: 'form-control' %>
+    <p></p>
+    <%= f.label :name, 'Unit Number' %>
+    <%= f.text_field :name, placeholder: "###", class: 'form-control' %>
+    <p></p>
+    <%= f.label :description %>
+    <%= f.text_field :description, class: 'form-control' %>
+    <p></p>
+    <%= f.label :serial %>
+    <%= f.text_field :serial, class: 'form-control' %>
+  </div>
+  <p></p>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>

@@ -1,4 +1,10 @@
 <% provide(:title, 'All Equipment') %>
+
+<h1>New Equipment</h1>
+<section class="entry_form">
+  <%= render 'shared/equipment_form' %>
+</section>
+
 <h1>Equipment Listing</h1>
 <%= will_paginate %>
 <ul class="equipments">
