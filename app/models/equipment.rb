@@ -2,6 +2,7 @@
 
 class Equipment < ApplicationRecord
   has_many :entries, dependent: :destroy
+  default_scope -> { order(name: :asc) }
   validates :name, presence: true, length: { maximum: 50 }
   validates :description, presence: true, length: { maximum: 255 }
   validates :serial, presence: true, length: { maximum: 255 }, uniqueness: { case_sensitive: false }
