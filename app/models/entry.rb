@@ -6,7 +6,7 @@ class Entry < ApplicationRecord
   validates :equipment_id, presence: true
   DATE_REGEX = /\A\d{4}-\d{2}-\d{2}\z/
   validates :date, presence: true, format: { with: DATE_REGEX }
-  validates :content, presence: true, length: { maximum: 255 }
+  validates :content, presence: true, length: { maximum: 2000 }
   validates :mileage, presence: true,
                       numericality: { only_integer: true, greater_than: 0 }
   validates :employee, presence: true

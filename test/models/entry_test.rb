@@ -36,7 +36,7 @@ class EntryTest < ActiveSupport::TestCase
   end
 
   test 'content should not be too long' do
-    @entry.content = 'w' * 256
+    @entry.content = 'w' * 2001
     assert_not @entry.valid?
   end
 
