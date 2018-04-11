@@ -24,7 +24,7 @@ class EquipmentController < ApplicationController
       flash[:success] = 'Equipment created!'
       redirect_back fallback_location: root_url
     else
-      render 'static_pages/home'
+      render 'new'
     end
   end
 
