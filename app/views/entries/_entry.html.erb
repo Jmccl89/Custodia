@@ -5,12 +5,12 @@
   <span class="employee"><%= entry.employee %></span>
   <% if current_user.admin? %>
     <br />
-    <span class="delete-button">
-        <%= link_to 'Delete', entry, method: :delete,
+<span class="delete-button">
+  <%= link_to 'Delete', entry, method: :delete,
                                      data: { confirm: 'Are you sure?' } %>
-    </span>
-  <% end %>
-  <span class="edit-button">
-        <%= link_to 'Edit', edit_entry_path %>
-  </span>
+</span>
+<% end %>
+<span class="edit-button">
+  <%= link_to 'Edit', edit_entry_path %>
+</span>
 </li>
