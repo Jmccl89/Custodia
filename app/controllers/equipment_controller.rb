@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class EquipmentController < ApplicationController
-  before_action :logged_in_user, only: %i[create destroy]
-  before_action :admin_user, only: :destroy
+  before_action :logged_in_user
+  before_action :admin_user, only: %i[create destroy new]
 
   def index
     @equipments = Equipment.paginate(page: params[:page])

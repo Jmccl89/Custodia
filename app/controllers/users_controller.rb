@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: %i[index edit update destroy]
+  before_action :logged_in_user
   before_action :correct_user, only: %i[edit update]
-  before_action :admin_user, only: :destroy
+  before_action :admin_user, only: %i[destroy create new]
 
   def index
     @users = User.paginate(page: params[:page])
@@ -60,6 +60,10 @@ private
   end
 
   def admin_user
-    redirect_to(root_url) unless current_user.admin?
+    unless current_user.admin?
+      store_location
+      flash[:danger] = 'You require admin privileges to perform that action.'
+      redirect_to root_url
+    end
   end
 end

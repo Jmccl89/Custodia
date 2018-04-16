@@ -1,6 +1,9 @@
 <% provide(:title, 'All Equipment') %>
 
 <h1>Equipment Listing</h1>
+<% if current_user.admin? %>
+  <p><%= link_to "Add New Equipment", new_equipment_path, class: "btn btn-lg btn-primary", role: "button" %></p>
+<% end %>
 <ul class="equipments">
   <%= render @equipments %>
 </ul>
