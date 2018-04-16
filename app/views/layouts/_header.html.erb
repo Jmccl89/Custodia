@@ -7,7 +7,6 @@
     <ul class="navbar-nav mr-auto">
       <% if !logged_in? %>
         <li class="nav-item"><%= link_to "Home",   root_path, class: "nav-link" %></li>
-        <li class="nav-item"><%= link_to "Sign Up",   signup_path, class: "nav-link" %></li>
       <% end %>
       <!-- TODO: Use this code block to change the nav bar once logged in -->
       <% if logged_in? %>
