@@ -3,7 +3,7 @@
 class Equipment < ApplicationRecord
   has_many :entries, dependent: :destroy
   default_scope -> { order(name: :asc) }
-  NAME_REGEX = /(Unit)\s\w+/
+  NAME_REGEX = /\A(Unit)\s\w+\z/
   validates :name, presence: true, length: { maximum: 50 }, format: { with: NAME_REGEX }
   validates :description, presence: true, length: { maximum: 255 }
   validates :serial, presence: true, length: { maximum: 255 }, uniqueness: { case_sensitive: false }
