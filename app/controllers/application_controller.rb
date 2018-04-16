@@ -13,4 +13,12 @@ private
       redirect_to login_url
     end
   end
+
+  def admin_user
+    unless current_user.admin?
+      store_location
+      flash[:danger] = 'You require admin privileges to perform that action.'
+      redirect_to root_url
+    end
+  end
 end

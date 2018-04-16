@@ -6,6 +6,13 @@
         <%= @equipment.name %> -
         <%= @equipment.description %>
       </h1>
+      <% if current_user.admin? %>
+        <% if @equipment.entries.count == 0 %>
+          <%= link_to "Delete", @equipment, method: :delete,
+                                         data: { confirm: "You sure?" } %>
+        <% end %>
+        <%= link_to "Edit", edit_equipment_path(@equipment) %>
+      <% end %>
     </section>
     <section class="entry_form">
         <%= render 'shared/entry_form' %>

@@ -58,12 +58,4 @@ private
     @user = User.find(params[:id])
     redirect_to(root_url) unless current_user?(@user)
   end
-
-  def admin_user
-    unless current_user.admin?
-      store_location
-      flash[:danger] = 'You require admin privileges to perform that action.'
-      redirect_to root_url
-    end
-  end
 end
