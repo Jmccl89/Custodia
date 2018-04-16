@@ -45,7 +45,7 @@ GEM
     ansi (1.5.0)
     arel (9.0.0)
     ast (2.4.0)
-    autoprefixer-rails (8.2.0)
+    autoprefixer-rails (8.3.0)
       execjs
     bcrypt (3.1.11)
     bindex (0.5.0)
@@ -54,8 +54,6 @@ GEM
       sass (>= 3.4.19)
     builder (3.2.3)
     byebug (10.0.2)
-    codeclimate-test-reporter (1.0.7)
-      simplecov
     coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -66,7 +64,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
-    docile (1.1.5)
+    docile (1.3.0)
     erubi (1.7.1)
     execjs (2.7.0)
     faker (1.8.7)
@@ -130,14 +128,14 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     parallel (1.12.1)
-    parser (2.5.0.5)
+    parser (2.5.1.0)
       ast (~> 2.4.0)
     pg (1.0.0)
     powerpack (0.1.1)
     pry (0.11.3)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
-    puma (3.11.3)
+    puma (3.11.4)
     rack (2.0.4)
     rack-test (1.0.0)
       rack (>= 1.0, < 3)
@@ -175,7 +173,7 @@ GEM
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     ref (2.0.0)
-    rubocop (0.54.0)
+    rubocop (0.55.0)
       parallel (~> 1.10)
       parser (>= 2.5)
       powerpack (~> 0.1)
@@ -196,8 +194,8 @@ GEM
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
     shellany (0.0.1)
-    simplecov (0.15.1)
-      docile (~> 1.1.0)
+    simplecov (0.16.1)
+      docile (~> 1.1)
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.2)
@@ -220,15 +218,15 @@ GEM
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
-    turbolinks (5.1.0)
+    turbolinks (5.1.1)
       turbolinks-source (~> 5.1)
     turbolinks-source (5.1.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    uglifier (4.1.8)
+    uglifier (4.1.9)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.3.0)
-    web-console (3.5.1)
+    web-console (3.6.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
@@ -247,7 +245,6 @@ DEPENDENCIES
   bcrypt
   bootstrap (= 4.0.0.alpha6)
   byebug
-  codeclimate-test-reporter (~> 1.0.0)
   coffee-rails
   faker
   guard
@@ -262,7 +259,7 @@ DEPENDENCIES
   rails-controller-testing
   rubocop
   sass-rails
-  simplecov (~> 0.15.0)
+  simplecov
   spring
   spring-watcher-listen
   sqlite3
