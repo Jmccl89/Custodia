@@ -2,7 +2,7 @@
 
 class EquipmentController < ApplicationController
   before_action :logged_in_user
-  before_action :admin_user, only: %i[create destroy new]
+  before_action :admin_user, only: %i[create destroy new edit]
 
   def index
     @equipments = Equipment.paginate(page: params[:page])
@@ -22,13 +22,31 @@ class EquipmentController < ApplicationController
     @equipment = Equipment.new(equipment_params)
     if @equipment.save
       flash[:success] = 'Equipment created!'
-      redirect_back fallback_location: root_url
+      redirect_to equipment_index_path fallback_location: root_url
     else
       render 'new'
     end
   end
 
-  def destroy; end
+  def edit
+    @equipment = Equipment.find(params[:id])
+  end
+
+  def update
+    @equipment = Equipment.find(params[:id])
+    if @equipment.update(equipment_params)
+      flash[:success] = 'Equipment updated.'
+      redirect_to @equipment
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    Equipment.find(params[:id]).destroy
+    flash[:success] = 'Equipment deleted.'
+    redirect_to equipment_index_path
+  end
 
 private
 
