@@ -16,12 +16,12 @@ class EntriesController < ApplicationController
   end
 
   def edit
-    @entry = Entry.find_by(params[:id])
+    @entry = Entry.find(params[:id])
     @equipment = Equipment.find(@entry.equipment_id)
   end
 
   def update
-    @entry = Entry.find_by(params[:id])
+    @entry = Entry.find(params[:id])
     @equipment = Equipment.find(@entry.equipment_id)
     if @entry.update(entry_params)
       flash[:success] = 'Entry updated.'
@@ -32,7 +32,7 @@ class EntriesController < ApplicationController
   end
 
   def destroy
-    @entry.destroy
+    Entry.find(params[:id]).destroy
     flash[:success] = 'Entry removed'
     redirect_back fallback_location: root_url
   end
