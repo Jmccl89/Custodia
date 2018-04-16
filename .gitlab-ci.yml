@@ -34,4 +34,3 @@ test:
     - bundle exec rake db:migrate
     - bundle exec rake assets:precompile
     - bundle exec rake test
-    - bundle exec codeclimate-test-reporter
