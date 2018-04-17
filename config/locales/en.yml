@@ -31,3 +31,7 @@ en:
             name:
               blank: "is required"
               invalid: "must be formatted: Unit ###"
+
+  welcome: "Welcome to Custodia!"
+  welcome_description: "Insert description here."
+  login_helper: "Don't have a login? Contact your administrator!"

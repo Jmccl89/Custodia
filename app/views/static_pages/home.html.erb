@@ -1,13 +1,13 @@
 <% provide(:title, "Welcome") %>
 <div class="jumbotron">
   <div class="container">
-    <h1 class="display-3">Welcome to Custodia</h1>
+    <h1 class="display-3"><%= t :welcome %></h1>
     <p class="lead">
-      Insert description here.
+      <%= t :welcome_description %>
     </p>
     <% if !logged_in? %>
       <p><%= link_to "Log in", login_path, class: "btn btn-lg btn-primary", role: "button" %></p>
-      <p>Don't have a login? Contact your administrator!</p>
+      <p><%= t :login_helper %></p>
     <% end %>
   </div>
 </div>
