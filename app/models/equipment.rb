@@ -9,4 +9,8 @@ class Equipment < ApplicationRecord
   validates :serial, presence: true, length: { maximum: 255 }, uniqueness: { case_sensitive: false }
   DATE_REGEX = /\A\d{4}-\d{2}-\d{2}\z/
   validates :purchase_date, presence: true, format: { with: DATE_REGEX }
+
+  def self.accessible_attributes
+    %w[name description serial purchase_date]
+  end
 end

@@ -11,6 +11,7 @@ gem 'jbuilder'
 gem 'jquery-rails'
 gem 'puma'
 gem 'rails'
+gem 'roo'
 gem 'sass-rails'
 gem 'therubyracer', platforms: :ruby
 gem 'turbolinks'
