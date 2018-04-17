@@ -3,6 +3,7 @@
   <span class="content"><%= entry.content %></span>
   <span class="mileage">Odometer: <%= entry.mileage %></span>
   <span class="employee"><%= entry.employee %></span>
+  <%= image_tag entry.picture.url if entry.picture? %>
   <% if current_user.admin? %>
     <br />
 <span class="delete-button">

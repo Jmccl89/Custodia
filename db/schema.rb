@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_10_202142) do
+ActiveRecord::Schema.define(version: 2018_04_17_200105) do
 
   create_table "entries", force: :cascade do |t|
     t.date "date"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2018_04_10_202142) do
     t.integer "equipment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "picture"
     t.index ["equipment_id", "date"], name: "index_entries_on_equipment_id_and_date"
     t.index ["equipment_id"], name: "index_entries_on_equipment_id"
   end

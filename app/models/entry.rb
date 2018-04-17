@@ -3,6 +3,7 @@
 class Entry < ApplicationRecord
   belongs_to :equipment
   default_scope -> { order(date: :desc) }
+  mount_uploader :picture, PictureUploader
   validates :equipment_id, presence: true
   DATE_REGEX = /\A\d{4}-\d{2}-\d{2}\z/
   validates :date, presence: true, format: { with: DATE_REGEX }
@@ -10,4 +11,14 @@ class Entry < ApplicationRecord
   validates :mileage, presence: true,
                       numericality: { only_integer: true, greater_than: 0 }
   validates :employee, presence: true
+  validate :picture_size
+
+private
+
+  # Validates the size of an uploaded picture
+  def picture_size
+    if picture.size > 5.megabytes
+      errors.add(:picture, 'should be less than 5MB')
+    end
+  end
 end

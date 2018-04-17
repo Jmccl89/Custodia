@@ -6,9 +6,11 @@ ruby '2.5.1'
 
 gem 'bcrypt'
 gem 'bootstrap'
+gem 'carrierwave'
 gem 'coffee-rails'
 gem 'jbuilder'
 gem 'jquery-rails'
+gem 'mini_magick'
 gem 'puma'
 gem 'rails'
 gem 'roo'
@@ -42,5 +44,8 @@ group :test do
 end
 
 group :production do
+  gem 'fog-google'
+  gem 'google-api-client'
+  gem 'mime-types'
   gem 'pg'
 end
