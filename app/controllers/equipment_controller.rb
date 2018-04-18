@@ -1,11 +1,17 @@
 # frozen_string_literal: true
 
 class EquipmentController < ApplicationController
+  require 'will_paginate/array'
+
   before_action :logged_in_user
   before_action :admin_user, only: %i[create destroy new edit]
 
   def index
-    @equipments = Equipment.paginate(page: params[:page])
+    padding = 4
+    @equipments = Equipment.all.sort_by do |e|
+      e.name.gsub(/\d+/) \
+          { |m| '0' * (4 - m.size) + m }
+    end .paginate(page: params[:page])
   end
 
   def new
