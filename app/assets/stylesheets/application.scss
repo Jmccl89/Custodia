@@ -57,35 +57,34 @@ margin-left: 60px;
 .entries {
   list-style: none;
   padding: 0;
+  margin-left: 30px;
+
   li {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
   }
+
   .employee {
     color: $gray-light;
     display: block;
-    margin-left: 60px;
   }
+
   .mileage {
     /* color: $gray-light; */
     display: block;
-    margin-left: 60px;
   }
+
   .content {
     display: block;
-    margin-left: 60px;
     img {
       display: block;
       padding: 5px 0;
     }
   }
+
   .timestamp {
     color: $gray-light;
     display: block;
-    margin-left: 60px;
-  }
-  .delete-button {
-    margin-left: 60px;
   }
 }
 
