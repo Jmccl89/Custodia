@@ -31,7 +31,8 @@ en:
             name:
               blank: "is required"
               invalid: "must be formatted: Unit ###"
-
-  welcome: "Welcome to Custodia!"
-  welcome_description: "Insert description here."
+  app_name: "Custodia"
+  company_name: "Bakanec Prairie Farms"
+  welcome: "Welcome to "
+  welcome_description: "Equipment Record Keeping System"
   login_helper: "Don't have a login? Contact your administrator!"
