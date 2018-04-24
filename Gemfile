@@ -45,7 +45,6 @@ end
 
 group :production do
   gem 'fog-google'
-  gem 'google-api-client'
   gem 'mime-types'
   gem 'pg'
 end
