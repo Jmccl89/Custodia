@@ -17,7 +17,9 @@ class PictureUploader < CarrierWave::Uploader::Base
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
     if Rails.env.test? || Rails.env.development?
-      'public/uploads'
+      'public/entries'
+    else
+      'entries'
     end
   end
 
@@ -50,6 +52,6 @@ class PictureUploader < CarrierWave::Uploader::Base
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   def filename
-    "#{model.date}-#{model.equipment.name}-#{Time.zone.now.getutc}"
+    "#{model.date}_#{model.equipment.name}_#{Time.zone.now.getutc}" if original_filename.present?
   end
 end
