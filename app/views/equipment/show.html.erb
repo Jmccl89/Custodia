@@ -6,6 +6,9 @@
         <%= @equipment.name %> -
         <%= @equipment.description %>
       </h1>
+      <h4>
+        <%= @equipment.serial %>
+      </h4>
       <% if current_user.admin? %>
         <% if @equipment.entries.count == 0 %>
           <%= link_to "Delete", @equipment, method: :delete,
