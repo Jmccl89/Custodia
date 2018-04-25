@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_17_200105) do
+ActiveRecord::Schema.define(version: 2018_04_25_151737) do
 
   create_table "entries", force: :cascade do |t|
     t.date "date"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 2018_04_17_200105) do
     t.date "purchase_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "plate"
+    t.date "expiry_date"
   end
 
   create_table "users", force: :cascade do |t|

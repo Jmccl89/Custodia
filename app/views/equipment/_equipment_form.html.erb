@@ -9,6 +9,14 @@
     <%= f.text_field :description, class: 'form-control' %>
     <%= f.label :serial %>
     <%= f.text_field :serial, class: 'form-control' %>
+    <br />
+    Where Applicable
+    <br />
+    <%= f.label :plate, '* License Plate' %>
+    <%= f.text_field :plate, placeholder: "123 ABC", class: 'form-control' %>
+    <%= f.label :expiry_date, '* Registration Expiry' %>
+    <%= f.date_field :expiry_date, :include_blank => true, class: 'form-control' %>
   </div>
+  <br />
   <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>
