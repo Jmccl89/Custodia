@@ -2,7 +2,7 @@
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
     <%= f.label :purchase_date %>
-    <%= f.date_field :purchase_date, :value => Time.now.strftime('%Y-%m-%d'), class: 'form-control' %>
+    <%= f.date_field :purchase_date, class: 'form-control' %>
     <%= f.label :name, 'Unit Number' %>
     <%= f.text_field :name, placeholder: "E.g. Unit 89", class: 'form-control' %>
     <%= f.label :description %>
