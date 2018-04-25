@@ -9,8 +9,23 @@ class Equipment < ApplicationRecord
   validates :serial, presence: true, length: { maximum: 255 }, uniqueness: { case_sensitive: false }
   DATE_REGEX = /\A\d{4}-\d{2}-\d{2}\z/
   validates :purchase_date, presence: true, format: { with: DATE_REGEX }
+  validates :plate, length: { maximum: 32 }
+  validates :expiry_date, format: { with: DATE_REGEX, allow_blank: true }
+  NULL_ATTRS = %w[plate].freeze
+  before_save :nil_if_blank
 
   def self.accessible_attributes
-    %w[name description serial purchase_date]
+    %w[name description serial purchase_date plate expiry_date]
+  end
+
+protected
+
+  def nil_if_blank
+    NULL_ATTRS.each do |attr|
+      if self[attr].blank?
+        self[:expiry_date] = nil
+        self[attr] = nil
+      end
+    end
   end
 end

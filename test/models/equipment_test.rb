@@ -5,7 +5,7 @@ require 'test_helper'
 class EquipmentTest < ActiveSupport::TestCase
   def setup
     @equipment = Equipment.new(name: 'Unit 59', description: 'Chevrolet Silverado 2008',
-                               serial: '1GCEK19098Z148759', purchase_date: '2012-10-25')
+                               serial: '1GCEK19098Z148759', purchase_date: '2012-10-25', plate: nil, expiry_date: nil)
   end
 
   test 'should be valid' do
