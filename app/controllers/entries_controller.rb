@@ -6,7 +6,7 @@ class EntriesController < ApplicationController
 
   def create
     @equipment = params[:equipment]
-    @entry = Equipment.find_by(id: params[:equipment]).entries.build(entry_params)
+    @entry = Equipment.find(params[:equipment]).entries.build(entry_params)
     if @entry.save
       flash[:success] = 'Entry created!'
       redirect_back fallback_location: root_url

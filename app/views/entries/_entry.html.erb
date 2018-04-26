@@ -7,12 +7,12 @@
   <% if current_user.admin? %>
     <br />
 <span class="delete-button">
-  <%= link_to 'Delete', entry, method: :delete,
+  <%= link_to 'Delete',equipment_entry_path(@equipment, entry), method: :delete,
                                      data: { confirm: 'Are you sure?' } %>
 </span>
 |
 <% end %>
 <span class="edit-button">
-  <%= link_to 'Edit', edit_entry_path(entry) %>
+  <%= link_to 'Edit', edit_equipment_entry_path(@equipment, entry) %>
 </span>
 </li>
