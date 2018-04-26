@@ -5,8 +5,8 @@ class EntriesController < ApplicationController
   before_action :admin_user, only: :destroy
 
   def create
-    @equipment = params[:equipment]
-    @entry = Equipment.find(params[:equipment]).entries.build(entry_params)
+    @equipment = Equipment.find(params[:equipment_id])
+    @entry = @equipment.entries.build(entry_params)
     if @entry.save
       flash[:success] = 'Entry created!'
       redirect_back fallback_location: root_url
