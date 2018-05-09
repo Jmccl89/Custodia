@@ -1,7 +1,8 @@
 AllCops:
-  TargetRubyVersion: 2.4
+  TargetRubyVersion: 2.5
   Exclude:
-    - db/migrate/20171023084638_drop_companies.rb
+    - vendor/**/*
+    - db/migrate/*
 Metrics/LineLength:
   Max: 120
 Metrics/AbcSize:

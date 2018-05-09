@@ -4,7 +4,9 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
 require 'rails/test_help'
 require 'simplecov'
-SimpleCov.start
+SimpleCov.start do
+  add_filter "/vendor/"
+end
 require 'minitest/reporters'
 require 'faker'
 Minitest::Reporters.use!
