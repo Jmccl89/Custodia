@@ -25,6 +25,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rubocop'
   gem 'sqlite3'
+  gem 'brakeman'
 end
 
 group :development do

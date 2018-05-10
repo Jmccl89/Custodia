@@ -26,3 +26,5 @@
 # Ignore uploaded test images.
 /public/uploads
 public/public
+
+brakeman-output.tabs

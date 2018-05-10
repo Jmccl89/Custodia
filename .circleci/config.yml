@@ -2,18 +2,15 @@
 #
 # Check https://circleci.com/docs/2.0/language-ruby/ for more details
 #
+defaults: &defaults
+  docker:
+    - image: circleci/ruby:2.5.1-node-browsers
+  working_directory: ~/repo
+
 version: 2
 jobs:
-  build:
-    docker:
-      # specify the version you desire here
-      - image: circleci/ruby:2.5.1-node-browsers
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-
-    working_directory: ~/repo
+  test:
+    <<: *defaults
 
     steps:
       - checkout
@@ -21,15 +18,13 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "Gemfile.lock" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
-
+            - v1-dependencies-{{ checksum "Gemfile.lock" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
       - run:
           name: install dependencies
           command: |
             bundle install --jobs=4 --retry=3 --path vendor/bundle
-
       - save_cache:
           paths:
             - ./vendor/bundle
@@ -43,6 +38,65 @@ jobs:
       - run:
           name: run tests
           command: bundle exec rake test
+      - store_artifacts:
+          path: coverage/
+          destination: coverage
+
+  lint:
+    <<: *defaults
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "Gemfile.lock" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+      - run:
+          name: install dependencies
+          command: |
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+
+      # Run rubocop
+      - run: bundle exec rubocop --rails --fail-level=warning --display-cop-names --format=progress --format=offenses --format=html --out="rubocop.html"
+      - store_artifacts:
+          path: rubocop.html
+          destination: rubocop.html
+      - run: rm rubocop.html
+
+  brakeman:
+    <<: *defaults
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "Gemfile.lock" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+      - run:
+          name: install dependencies
+          command: |
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+
+      # Update brakeman and run
+      - run: bundle update brakeman --quiet
+      - run: bundle exec brakeman -o brakeman-output.tabs --no-progress --separate-models --exit-on-warn
+      - store_artifacts:
+          path: brakeman-output.tabs
+          destination: brakeman-output.tabs
 
   deploy-job:
     docker:
@@ -56,12 +110,14 @@ jobs:
 
 workflows:
   version: 2
-  build-deploy:
+  test-deploy:
     jobs:
-      - build
+      - test
+      - lint
+      - brakeman
       - deploy-job:
           requires:
-            - build
+            - test
           filters:
             branches:
               only: master
