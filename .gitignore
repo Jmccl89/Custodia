@@ -27,4 +27,4 @@
 /public/uploads
 public/public
 
-brakeman-output.tabs
+brakeman-output.*

@@ -93,10 +93,10 @@ jobs:
 
       # Update brakeman and run
       - run: bundle update brakeman --quiet
-      - run: bundle exec brakeman -o brakeman-output.tabs --no-progress --separate-models --exit-on-warn
+      - run: bundle exec brakeman -x CheckRender -o brakeman-output.html --no-progress --separate-models --exit-on-warn
       - store_artifacts:
-          path: brakeman-output.tabs
-          destination: brakeman-output.tabs
+          path: brakeman-output.html
+          destination: brakeman-output.html
 
   deploy-job:
     docker:
