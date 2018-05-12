@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 ruby '2.5.1'
 
-gem 'bcrypt'
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git'
 gem 'bootstrap'
 gem 'carrierwave'
 gem 'coffee-rails'
@@ -22,10 +22,10 @@ gem 'will_paginate'
 gem 'will_paginate-bootstrap4'
 
 group :development, :test do
+  gem 'brakeman'
   gem 'byebug'
   gem 'rubocop'
   gem 'sqlite3'
-  gem 'brakeman'
 end
 
 group :development do
