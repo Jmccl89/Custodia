@@ -1,7 +1,12 @@
 <li id="entry-<%= entry.id %>">
   <span class="timestamp">Work Date: <%= entry.date %></span>
   <span class="content"><%= entry.content %></span>
-  <span class="mileage">Odometer: <%= entry.mileage %></span>
+  <% if entry.mileage > 0 %>
+    <span class="mileage">Odometer: <%= entry.mileage %></span>
+  <% end %>
+  <% if entry.secondary_hours != 0 && @equipment.secondary_hours_label.present? %>
+    <span class="hours">Odometer: <%= entry.secondary_hours %></span>
+  <% end %>
   <span class="employee"><%= entry.employee %></span>
   <%= image_tag entry.picture.url if entry.picture? %>
   <% if current_user.admin? %>

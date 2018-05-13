@@ -40,6 +40,6 @@ class EntriesController < ApplicationController
 private
 
   def entry_params
-    params.require(:entry).permit(:content, :mileage, :employee, :date, :equipment, :picture)
+    params.require(:entry).permit(:content, :mileage, :secondary_hours, :employee, :date, :equipment, :picture)
   end
 end
