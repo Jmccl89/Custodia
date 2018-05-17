@@ -22,10 +22,10 @@ gem 'will_paginate'
 gem 'will_paginate-bootstrap4'
 
 group :development, :test do
+  gem 'brakeman'
   gem 'byebug'
   gem 'rubocop'
   gem 'sqlite3'
-  gem 'brakeman'
 end
 
 group :development do
@@ -37,6 +37,7 @@ group :development do
 end
 
 group :test do
+  gem 'coveralls', require: false
   gem 'guard'
   gem 'guard-minitest'
   gem 'minitest-reporters'
