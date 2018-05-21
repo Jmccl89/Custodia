@@ -16,8 +16,10 @@
     <%= f.text_field :plate, placeholder: "123 ABC", class: 'form-control' %>
     <%= f.label :expiry_date, '* Registration Expiry' %>
     <%= f.date_field :expiry_date, :include_blank => true, class: 'form-control' %>
+    <%= f.label :primary_hours_label, '* Label for Primary Hours | Leave blank if inapplicable.' %>
+    <%= f.text_field :primary_hours_label, placeholder: "KM, Miles, Hours, etc.", :include_blank => true, class: 'form-control' %>
     <%= f.label :secondary_hours_label, '* Label for Secondary Hours | Leave blank if inapplicable.' %>
-    <%= f.date_field :secondary_hours_label, placeholder: "Mileage, Thrashing Hours, etc.", :include_blank => true, class: 'form-control' %>
+    <%= f.text_field :secondary_hours_label, placeholder: "Hours, Thrashing Hours, etc.", :include_blank => true, class: 'form-control' %>
   </div>
   <br />
   <%= f.submit "Post", class: "btn btn-primary" %>

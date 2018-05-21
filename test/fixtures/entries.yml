@@ -26,6 +26,7 @@ green:
   content: 'Back shocks replaced, oil changed.'
   mileage: 197_300
   employee: 'Chris'
+  secondary_hours: 123.3
   equipment: chevy
 
 <% 30.times do |n| %>

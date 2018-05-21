@@ -44,7 +44,8 @@ Equipment.create!(name: 'Unit 59',
 Equipment.create!(name: 'Unit 60',
                   description: 'Chevrolet Silverado 2008',
                   serial: '123456678',
-                  purchase_date: '2012-10-25')
+                  purchase_date: '2012-10-25',
+                  secondary_hours_label: 'Hours')
 
 Equipment.create!(name: 'Unit 61',
                   description: 'Dodge Durango 2007',
