@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_25_151737) do
+ActiveRecord::Schema.define(version: 2018_05_21_092246) do
 
   create_table "entries", force: :cascade do |t|
     t.date "date"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 2018_04_25_151737) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "picture"
+    t.float "secondary_hours"
+    t.float "primary_hours"
     t.index ["equipment_id", "date"], name: "index_entries_on_equipment_id_and_date"
     t.index ["equipment_id"], name: "index_entries_on_equipment_id"
   end
@@ -36,6 +38,8 @@ ActiveRecord::Schema.define(version: 2018_04_25_151737) do
     t.datetime "updated_at", null: false
     t.string "plate"
     t.date "expiry_date"
+    t.string "secondary_hours_label"
+    t.string "primary_hours_label"
   end
 
   create_table "users", force: :cascade do |t|

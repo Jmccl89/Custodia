@@ -5,9 +5,21 @@
     <%= f.date_field :date, class: 'form-control' %>
     <p></p>
     <%= f.text_area :content, placeholder: "Enter notes or work completed...", class: 'form-control' %>
-    <p></p>
-    <%= f.label :mileage, 'Mileage / Hours' %>
-    <%= f.text_field :mileage, placeholder: "###", class: 'form-control' %>
+    <% if @entry.mileage.present? %>
+      <p></p>
+      <%= f.label :mileage, 'Mileage / Hours' %>
+      <%= f.text_field :mileage, placeholder: "###", class: 'form-control' %>
+    <% end %>
+    <% if @equipment.primary_hours_label.present? %>
+      <p></p>
+      <%= f.label :primary_hours, @equipment.primary_hours_label %>
+      <%= f.text_field :primary_hours, placeholder: "###", class: 'form-control' %>
+    <% end %>
+    <% if @equipment.secondary_hours_label.present? %>
+      <p></p>
+      <%= f.label :secondary_hours, @equipment.secondary_hours_label %>
+      <%= f.text_field :secondary_hours, placeholder: "###", class: 'form-control' %>
+    <% end %>
     <p></p>
     <%= f.label :employee %>
     <%= f.text_field :employee, value: current_user.name, class: 'form-control' %>

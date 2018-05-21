@@ -11,6 +11,7 @@ chevy:
   description: 'Chevrolet Silverado 2008'
   serial: '123CHEVY'
   purchase_date: '2012-10-25'
+  secondary_hours_label: 'Hours'
 
 dodge:
   name: 'Unit 60'

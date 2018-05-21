@@ -18,7 +18,7 @@
 $grayMediumLight: #eaeaea;
 $gray-darker: #222;
 $gray-dark: #333;
-$gray: #555;
+$gray: #777;
 $gray-light: #999;
 $gray-lighter: #eee;
 
@@ -69,8 +69,13 @@ margin-left: 60px;
     display: block;
   }
 
-  .mileage {
-    /* color: $gray-light; */
+  .primaryhours {
+    color: $gray; 
+    display: block;
+  }
+
+  .secondaryhours {
+    color: $gray; 
     display: block;
   }
 

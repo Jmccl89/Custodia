@@ -9,7 +9,10 @@ class Entry < ApplicationRecord
   validates :date, presence: true, format: { with: DATE_REGEX }
   validates :content, presence: true, length: { maximum: 2000 }
   validates :mileage, presence: true,
-                      numericality: { only_integer: true, greater_than: 0 }
+                      numericality: { only_integer: true, greater_than: 0 },
+                      allow_blank: true
+  validates :primary_hours, numericality: { greater_than: 0 }, allow_blank: true
+  validates :secondary_hours, numericality: { greater_than: 0 }, allow_blank: true
   validates :employee, presence: true
   validate :picture_size
 

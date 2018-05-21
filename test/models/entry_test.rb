@@ -40,15 +40,28 @@ class EntryTest < ActiveSupport::TestCase
     assert_not @entry.valid?
   end
 
-  test 'mileage should be present' do
-    @entry.mileage = '   '
-    assert_not @entry.valid?
-  end
-
-  test 'mileage should be valid' do
+  test 'deprecated mileage should be valid if present' do
     @entry.mileage = -1
     assert_not @entry.valid?
     @entry.mileage = 'a'
+    assert_not @entry.valid?
+  end
+
+  test 'primary hours should be valid if present' do
+    @entry.primary_hours = 100.0
+    assert @entry.valid?
+    @entry.primary_hours = 'abc'
+    assert_not @entry.valid?
+    @entry.primary_hours = -1
+    assert_not @entry.valid?
+  end
+
+  test 'secondary hours should be valid if present' do
+    @entry.primary_hours = 100.0
+    assert @entry.valid?
+    @entry.primary_hours = 'abc'
+    assert_not @entry.valid?
+    @entry.primary_hours = -1
     assert_not @entry.valid?
   end
 

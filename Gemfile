@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 ruby '2.5.1'
 
-gem 'bcrypt'
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git'
 gem 'bootstrap'
 gem 'carrierwave'
 gem 'coffee-rails'
