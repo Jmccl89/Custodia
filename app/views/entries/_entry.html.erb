@@ -5,10 +5,10 @@
     Odo*: <%= entry.mileage %>
   <% end %>
   <% if entry.primary_hours.present? && @equipment.primary_hours_label.present? %>
-    <span class="hours"><%= @equipment.primary_hours_label %>: <%= entry.primary_hours %></span>
+    <span class="primaryhours"><%= @equipment.primary_hours_label %>: <%= entry.primary_hours %></span>
   <% end %>
   <% if entry.secondary_hours.present? && @equipment.secondary_hours_label.present? %>
-    <span class="hours"><br /><%= @equipment.secondary_hours_label %>: <%= entry.secondary_hours %></span>
+    <span class="secondaryhours"><%= @equipment.secondary_hours_label %>: <%= entry.secondary_hours %></span>
   <% end %>
   <span class="employee"><%= entry.employee %></span>
   <%= image_tag entry.picture.url if entry.picture? %>
