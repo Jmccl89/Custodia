@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_21_092246) do
+ActiveRecord::Schema.define(version: 2018_06_29_223057) do
 
   create_table "entries", force: :cascade do |t|
     t.date "date"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2018_05_21_092246) do
     t.date "expiry_date"
     t.string "secondary_hours_label"
     t.string "primary_hours_label"
+    t.text "notes"
   end
 
   create_table "users", force: :cascade do |t|

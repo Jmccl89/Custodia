@@ -13,6 +13,7 @@ class Equipment < ApplicationRecord
   validates :expiry_date, format: { with: DATE_REGEX, allow_blank: true }
   validates :primary_hours_label, allow_blank: true, length: { maximum: 32 }
   validates :secondary_hours_label, allow_blank: true, length: { maximum: 32 }
+  validates :notes, allow_blank: true, length: { maximum: 2000 }
   NULL_ATTRS = %w[plate].freeze
   before_save :nil_if_blank
 
