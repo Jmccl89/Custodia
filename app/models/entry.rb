@@ -5,7 +5,7 @@ class Entry < ApplicationRecord
   default_scope -> { order(date: :desc) }
   mount_uploader :picture, PictureUploader
   validates :equipment_id, presence: true
-  DATE_REGEX = /\A\d{4}-\d{2}-\d{2}\z/
+  DATE_REGEX = /\A\d{4}-\d{2}-\d{2}\z/.freeze
   validates :date, presence: true, format: { with: DATE_REGEX }
   validates :content, presence: true, length: { maximum: 2000 }
   validates :mileage, presence: true,

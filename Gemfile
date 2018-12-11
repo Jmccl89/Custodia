@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-ruby '2.5.1'
+ruby '2.5.3'
 
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git'
 gem 'bootstrap'
@@ -11,11 +11,11 @@ gem 'coffee-rails'
 gem 'jbuilder'
 gem 'jquery-rails'
 gem 'mini_magick'
+gem 'mini_racer'
 gem 'puma'
 gem 'rails'
 gem 'roo'
 gem 'sass-rails'
-gem 'therubyracer', platforms: :ruby
 gem 'turbolinks'
 gem 'uglifier'
 gem 'will_paginate'

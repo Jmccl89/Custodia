@@ -42,19 +42,19 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
     # Invalid password & confirmation
     patch password_reset_path(user.reset_token),
           params: { email: user.email,
-                    user: { password:              'foobaz',
+                    user: { password: 'foobaz',
                             password_confirmation: 'barquux' } }
     assert_select 'div#error_explanation'
     # Empty password
     patch password_reset_path(user.reset_token),
           params: { email: user.email,
-                    user: { password:              '',
+                    user: { password: '',
                             password_confirmation: '' } }
     assert_select 'div#error_explanation'
     # Valid password & confirmation
     patch password_reset_path(user.reset_token),
           params: { email: user.email,
-                    user: { password:              'foobaz',
+                    user: { password: 'foobaz',
                             password_confirmation: 'foobaz' } }
     assert logged_in?
     assert_not flash.empty?
@@ -70,7 +70,7 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
     @user.update_attribute(:reset_sent_at, 3.hours.ago)
     patch password_reset_path(@user.reset_token),
           params: { email: @user.email,
-                    user: { password:              'foobar',
+                    user: { password: 'foobar',
                             password_confirmation: 'foobar' } }
     assert_response :redirect
     follow_redirect!
