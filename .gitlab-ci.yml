@@ -37,9 +37,9 @@ rails:
   variables:
     DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/$POSTGRES_DB"
   script:
-    - rake db:migrate
-    - rake db:seed
-    - rake test
+    - bundle exec rake db:migrate
+    - bundle exec rake db:seed
+    - bundle exec rake test
 
 # This deploy job uses a simple deploy flow to Heroku, other providers, e.g. AWS Elastic Beanstalk
 # are supported too: https://github.com/travis-ci/dpl
