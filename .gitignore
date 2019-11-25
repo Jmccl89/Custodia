@@ -28,3 +28,6 @@
 public/public
 
 brakeman-output.*
+
+# Ignore test results
+/test/reports/*

@@ -43,7 +43,7 @@ jobs:
           path: coverage/
           destination: coverage
       - store_test_results:
-          path: test-results
+          path: test/reports
 
   lint:
     <<: *defaults
