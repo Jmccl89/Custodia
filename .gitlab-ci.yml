@@ -11,7 +11,6 @@ services:
 
 variables:
   POSTGRES_DB: database_name
-  DS_DISABLE_DIND: "true"
 
 # Cache gems in between builds
 cache:
