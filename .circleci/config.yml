@@ -99,16 +99,6 @@ jobs:
           path: brakeman-output.html
           destination: brakeman-output.html
 
-  deploy-job:
-    docker:
-      - image: circleci/ruby:latest-browsers
-    steps:
-      - checkout
-      - run:
-          name: Deploy Master to Heroku
-          command: |
-            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
-
 workflows:
   version: 2
   test-deploy:
@@ -116,9 +106,3 @@ workflows:
       - test
       - lint
       - brakeman
-      - deploy-job:
-          requires:
-            - test
-          filters:
-            branches:
-              only: master
